@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lexend:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Cinematic Editorial Palette - Light Mode */
+    --background: 0.98 0.005 240;
+    --foreground: 0.18 0.02 240;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 240;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 240;
+    /* Deep Teal Primary */
+    --primary: 0.48 0.11 200;
+    --primary-foreground: 0.98 0.005 240;
+    /* Electric Coral Accent */
+    --secondary: 0.68 0.18 25;
+    --secondary-foreground: 0.98 0.005 240;
+    --muted: 0.94 0.01 240;
+    --muted-foreground: 0.52 0.02 240;
+    --accent: 0.68 0.18 25;
+    --accent-foreground: 0.98 0.005 240;
+    --destructive: 0.55 0.22 15;
+    --destructive-foreground: 0.98 0.005 240;
+    --border: 0.88 0.01 240;
+    --input: 0.88 0.01 240;
+    --ring: 0.48 0.11 200;
+    --chart-1: 0.48 0.11 200;
+    --chart-2: 0.68 0.18 25;
+    --chart-3: 0.65 0.15 280;
+    --chart-4: 0.58 0.12 160;
+    --chart-5: 0.72 0.16 45;
+    --sidebar: 0.98 0.005 240;
+    --sidebar-foreground: 0.18 0.02 240;
+    --sidebar-primary: 0.48 0.11 200;
+    --sidebar-primary-foreground: 0.98 0.005 240;
+    --sidebar-accent: 0.94 0.01 240;
+    --sidebar-accent-foreground: 0.18 0.02 240;
+    --sidebar-border: 0.88 0.01 240;
+    --sidebar-ring: 0.48 0.11 200;
+  }
+
+  .dark {
+    /* Cinematic Editorial Palette - Dark Mode */
+    --background: 0.12 0.015 240;
+    --foreground: 0.96 0.005 240;
+    --card: 0.16 0.02 240;
+    --card-foreground: 0.96 0.005 240;
+    --popover: 0.16 0.02 240;
+    --popover-foreground: 0.96 0.005 240;
+    /* Bright Teal Primary (elevated for dark) */
+    --primary: 0.62 0.14 195;
+    --primary-foreground: 0.12 0.015 240;
+    /* Vibrant Coral Accent */
+    --secondary: 0.72 0.2 20;
+    --secondary-foreground: 0.12 0.015 240;
+    --muted: 0.22 0.02 240;
+    --muted-foreground: 0.65 0.01 240;
+    --accent: 0.72 0.2 20;
+    --accent-foreground: 0.12 0.015 240;
+    --destructive: 0.62 0.24 15;
+    --destructive-foreground: 0.96 0.005 240;
+    --border: 0.25 0.02 240;
+    --input: 0.25 0.02 240;
+    --ring: 0.62 0.14 195;
+    --chart-1: 0.62 0.14 195;
+    --chart-2: 0.72 0.2 20;
+    --chart-3: 0.68 0.16 280;
+    --chart-4: 0.60 0.13 160;
+    --chart-5: 0.75 0.18 45;
+    --sidebar: 0.14 0.015 240;
+    --sidebar-foreground: 0.96 0.005 240;
+    --sidebar-primary: 0.62 0.14 195;
+    --sidebar-primary-foreground: 0.12 0.015 240;
+    --sidebar-accent: 0.22 0.02 240;
+    --sidebar-accent-foreground: 0.96 0.005 240;
+    --sidebar-border: 0.25 0.02 240;
+    --sidebar-ring: 0.62 0.14 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  
+  /* Film grain texture overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  
+  /* Smooth scrolling for modern browsers */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
